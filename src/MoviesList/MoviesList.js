@@ -1,9 +1,8 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import MovieItem from './components/MovieItem';
-import {movies} from '../../data/movies.json';
 
-const MoviesList = () => {
+const MoviesList = ({movies}) => {
   return (
     <FlatList
       data={movies.slice(0, 51)}

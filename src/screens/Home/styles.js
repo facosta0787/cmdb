@@ -5,14 +5,16 @@ export const ScreenContainer = styled.SafeAreaView`
 `;
 
 export const HeaderContainer = styled.View`
-  height: 40px;
+  height: 50px;
   width: 100%;
   flex-direction: row;
-  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom-width: 1px;
+  border-bottom-color: #eceff5;
 `;
 
 export const Button = styled.TouchableOpacity`
-  width: 45px;
+  width: 50px;
 `;
 
 const border = side => {
@@ -42,8 +44,6 @@ export const ButtonContent = styled.View`
 export const LogoContainer = styled.View`
   width: 100%;
   height: 50px;
-  border-bottom-width: 1px;
-  border-bottom-color: #eceff5;
 `;
 
 export const StyledLogo = styled.Image`
