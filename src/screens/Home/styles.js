@@ -41,17 +41,6 @@ export const ButtonContent = styled.View`
   ${props => border(props.borderSide)}
 `;
 
-export const LogoContainer = styled.View`
-  width: 100%;
-  height: 50px;
-`;
-
-export const StyledLogo = styled.Image`
-  width: 100%;
-  height: 50px;
-  resize-mode: contain;
-`;
-
 export const Content = styled.View`
   flex: 1;
   padding: 8px;
