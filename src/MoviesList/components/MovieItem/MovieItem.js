@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, Linking} from 'react-native';
+import {TouchableOpacity, Linking, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   Container,
@@ -11,12 +11,21 @@ import {
 } from './styles';
 
 const MovieItem = props => {
+  const handleOpenLink = async () => {
+    try {
+      const canOpen = await Linking.canOpenURL(props.url);
+      if (!canOpen) {
+        return Alert.alert('No se puede abrir la URL');
+      }
+      return Linking.openURL(props.url);
+    } catch (err) {
+      Alert.alert(err);
+    }
+  };
+
   return (
     <Container>
-      <TouchableOpacity
-        onPress={() => {
-          Linking.openURL(props.url);
-        }}>
+      <TouchableOpacity onPress={handleOpenLink}>
         <Poster
           source={{
             uri: props.posterUrl,
