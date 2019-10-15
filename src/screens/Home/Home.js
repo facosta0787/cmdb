@@ -5,8 +5,6 @@ import Title from './components/Title';
 import Searcher from '../../Searcher';
 import MoviesList from '../../MoviesList';
 
-import {movies} from '../../../data/movies.json';
-
 import {
   ScreenContainer,
   HeaderContainer,
@@ -15,7 +13,7 @@ import {
   Content,
 } from './styles';
 
-const Home = () => {
+const Home = ({movies}) => {
   const getFilteredMovies = () => {
     if (searchValue.trim() === '') {
       return _.orderBy(movies, ['year', 'rating'], ['desc', 'desc']).slice(

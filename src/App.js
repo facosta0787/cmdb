@@ -1,31 +1,17 @@
-import React, {useState, useEffect} from 'react';
+/* eslint-disable curly */
+import React from 'react';
+import {Alert} from 'react-native';
+import {useQuery} from '@apollo/react-hooks';
 import Home from './screens/Home';
 import Splash from './screens/Splash';
+import {fetchMovies} from './graphql/queries';
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const {loading, error, data} = useQuery(fetchMovies);
 
-  useEffect(() => {
-    (async () => {
-      const task = async () => {
-        return new Promise(resolve => {
-          setTimeout(() => {
-            resolve(false);
-          }, 2000);
-        });
-      };
-
-      const loadingStatus = await task();
-      setIsLoading(loadingStatus);
-    })();
-
-    return () => {};
-  }, []);
-
-  if (isLoading) {
-    return <Splash />;
-  }
-  return <Home />;
+  if (loading) return <Splash />;
+  if (error) return Alert.error('Hubo un error obteniendo las peliculas');
+  return <Home movies={data.getMovies} />;
 };
 
 export default App;
