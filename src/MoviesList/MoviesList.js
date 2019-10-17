@@ -1,16 +1,16 @@
-import React from 'react';
-import {FlatList} from 'react-native';
-import MovieItem from './components/MovieItem';
+import React from 'react'
+import { FlatList } from 'react-native'
+import MovieItem from './components/MovieItem'
 
-const MoviesList = ({movies}) => {
+const MoviesList = ({ movies }) => {
   return (
     <FlatList
       data={movies}
-      renderItem={({item}) => <MovieItem {...item} />}
+      renderItem={({ item }) => <MovieItem {...item} />}
       numColumns={3}
       keyExtractor={item => item.id}
     />
-  );
-};
+  )
+}
 
-export default MoviesList;
+export default MoviesList

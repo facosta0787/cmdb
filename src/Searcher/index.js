@@ -1,2 +1,2 @@
-import Searcher from './Searcher';
-export default Searcher;
+import Searcher from './Searcher'
+export default Searcher

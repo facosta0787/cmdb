@@ -1,7 +1,7 @@
-import React from 'react';
-import {Container, Input} from './styles';
+import React from 'react'
+import { Container, Input } from './styles'
 
-const Searcher = ({value, onChange, onSubmit}) => {
+const Searcher = ({ value, onChange, onSubmit }) => {
   return (
     <Container>
       <Input
@@ -12,7 +12,7 @@ const Searcher = ({value, onChange, onSubmit}) => {
         underlineColorAndroid="transparent"
       />
     </Container>
-  );
-};
+  )
+}
 
-export default Searcher;
+export default Searcher

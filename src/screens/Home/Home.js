@@ -1,25 +1,25 @@
-import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import _ from 'lodash';
-import Title from './components/Title';
-import Searcher from '../../Searcher';
-import MoviesList from '../../MoviesList';
+import React, { useState } from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import _ from 'lodash'
+import Title from './components/Title'
+import Searcher from '../../Searcher'
+import MoviesList from '../../MoviesList'
 
 import {
   ScreenContainer,
   HeaderContainer,
   Button,
   ButtonContent,
-  Content,
-} from './styles';
+  Content
+} from './styles'
 
-const Home = ({movies}) => {
+const Home = ({ movies }) => {
   const getFilteredMovies = () => {
     if (searchValue.trim() === '') {
       return _.orderBy(movies, ['year', 'rating'], ['desc', 'desc']).slice(
         0,
-        20,
-      );
+        20
+      )
     }
     return _.orderBy(
       movies.filter(movie => {
@@ -28,24 +28,24 @@ const Home = ({movies}) => {
             .toLowerCase()
             .includes(searchValue.toLowerCase().trim()) ||
           movie.year.toLowerCase().includes(searchValue.toLowerCase().trim())
-        );
+        )
       }),
       ['year', 'rating'],
-      ['desc', 'desc'],
-    );
-  };
+      ['desc', 'desc']
+    )
+  }
 
-  const [searchValue, setSearchValue] = useState('');
-  const [filteredMovies, setFilteredMovies] = useState(getFilteredMovies());
+  const [searchValue, setSearchValue] = useState('')
+  const [filteredMovies, setFilteredMovies] = useState(getFilteredMovies())
 
-  const handleSearchInputChange = ({nativeEvent}) => {
-    const {text} = nativeEvent;
-    setSearchValue(text);
-  };
+  const handleSearchInputChange = ({ nativeEvent }) => {
+    const { text } = nativeEvent
+    setSearchValue(text)
+  }
 
   const handleSearchInputSubmit = () => {
-    setFilteredMovies(getFilteredMovies());
-  };
+    setFilteredMovies(getFilteredMovies())
+  }
 
   return (
     <ScreenContainer>
@@ -66,7 +66,7 @@ const Home = ({movies}) => {
         <MoviesList movies={filteredMovies} />
       </Content>
     </ScreenContainer>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

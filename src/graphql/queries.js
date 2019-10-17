@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export const fetchMovies = gql`
   query fetchMovies {
@@ -13,4 +13,4 @@ export const fetchMovies = gql`
       url
     }
   }
-`;
+`

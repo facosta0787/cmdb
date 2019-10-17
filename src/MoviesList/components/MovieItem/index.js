@@ -1,2 +1,2 @@
-import MovieItem from './MovieItem';
-export default MovieItem;
+import MovieItem from './MovieItem'
+export default MovieItem

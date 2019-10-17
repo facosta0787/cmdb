@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-import {TitleWrapper, TitleBefore, Title} from '../styles';
+import { TitleWrapper, TitleBefore, Title } from '../styles'
 
-const TitleComponent = ({children}) => {
+const TitleComponent = ({ children }) => {
   return (
     <TitleWrapper>
       <TitleBefore />
       <Title>{children}</Title>
     </TitleWrapper>
-  );
-};
+  )
+}
 
-export default TitleComponent;
+export default TitleComponent
